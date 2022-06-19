@@ -1,4 +1,0 @@
-git branch
-git branch develop
-git checkout develop
-git branch
