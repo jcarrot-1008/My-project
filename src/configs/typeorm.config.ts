@@ -1,12 +1,25 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-
-export const typeORMConfig: TypeOrmModuleOptions = {
-  type: 'postgres',
-  host: 'local',
-  port: 5432,
-  username: 'june',
-  password: '1234',
-  database: 'june',
-  entities: [__dirname + '/../**/*.entity.{js,ts}'],
-  synchronize: true,
-};
+import { envVars } from 'src/util/envVars';
+console.log(envVars);
+export const typeORMConfig: TypeOrmModuleOptions =
+  envVars.NODE_ENV !== 'production'
+    ? {
+        type: 'postgres',
+        host: 'localhost',
+        port: 5432,
+        username: envVars.DBUSER,
+        password: envVars.DBPASSWORD,
+        database: envVars.DATABASE,
+        entities: [__dirname + '/../**/*.entity.{js,ts}'],
+        synchronize: true,
+      }
+    : {
+        type: 'postgres',
+        host: envVars.DBIP,
+        port: 5432,
+        username: envVars.DBUSER,
+        password: envVars.DBPASSWORD,
+        database: envVars.DATABASE,
+        entities: [__dirname + '/../**/*.entity.{js,ts}'],
+        synchronize: true,
+      };
