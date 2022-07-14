@@ -37,7 +37,7 @@ export const ModalTitle = styled.div`
     font-family: Arial, Helvetica, sans-serif;
 `
 
-export const Modaldiscription = styled.div`
+export const Modaldescription = styled.div`
     display: flex;
     align-items: flex-end;
     justify-content: center;
