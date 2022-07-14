@@ -16,6 +16,7 @@ export class BoardRepository extends Repository<Board> {
       title,
       description,
       status: BoardStatus.PUBLIC,
+      date: new Date(Date.now()),
       user,
     });
 

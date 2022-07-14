@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Logo, PopupBoxObject, ShadowedBox} from '../components/Styles/Container/Container.styled'
 import CheckModal from '../components/util/CheckModal'
-import { ModalContext } from '../components/context/modalContext'
+import { MainContext } from '../components/context/mainContext'
 
 const Login = () => {
 
@@ -13,7 +13,7 @@ const Login = () => {
     const handleUsernameChange = ({ target: { value } }) => setUsername(value);
     const handlePasswordChange = ({ target: { value } }) => setPassword(value);
 
-    const { onModal } = useContext(ModalContext);
+    const { onModal } = useContext(MainContext);
     
     const inputRef = useRef()
     useEffect(() => {
@@ -21,7 +21,7 @@ const Login = () => {
     },[])
     
     const title = '환영합니다.'
-    const discription ='로그인에 성공하였습니다.'
+    const description ='로그인에 성공하였습니다.'
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -39,7 +39,6 @@ const Login = () => {
             localStorage.setItem('jwt-token', res.accessToken);
             onModal()
         }
-        // modalModel.setSearchField('isOpen', true)
     })
 }
   return (
@@ -81,7 +80,7 @@ const Login = () => {
         </ShadowedBox>
         
     </PopupBoxObject>
-    <CheckModal title={title} discription={discription} />
+    <CheckModal title={title} description={description} />
     </>
   )
 }
