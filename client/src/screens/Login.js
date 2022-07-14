@@ -29,7 +29,7 @@ const Login = () => {
         console.log(password);
         fetch('http://localhost:3030/auth/signin',{
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'Connection': 'keep-alive', 'Accept': '*/*'},
             body: JSON.stringify({
             username: username,
             password: password
@@ -39,7 +39,6 @@ const Login = () => {
             localStorage.setItem('jwt-token', res.accessToken);
             onModal()
         }
-        // modalModel.setSearchField('isOpen', true)
     })
 }
   return (
