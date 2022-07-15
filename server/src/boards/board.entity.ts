@@ -23,7 +23,10 @@ export class Board extends BaseEntity {
   status: BoardStatus;
 
   @Column({ nullable: true })
-  date: Date;
+  createDate: string;
+
+  @Column({ nullable: true })
+  editDate: string;
 
   @ManyToOne((type) => User, (user) => user.boards, { eager: false })
   user: User;

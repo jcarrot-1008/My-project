@@ -19,7 +19,7 @@ const SelectBox = (props) => {
               return <MenuItem value={item}>{item}</MenuItem>
             }) ?? <MenuItem value={10}>선택</MenuItem>
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '20px 180px' }}>
+    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px', marginRight: '180px' }}>
     <Box sx={{ minWidth: 120, maxWidth: 250}}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">조회수량</InputLabel>

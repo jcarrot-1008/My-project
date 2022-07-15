@@ -4,10 +4,11 @@ import Form from 'react-bootstrap/Form';
 import {Box} from './BoardStyles/BoardStyles'
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-import CheckModal from '../../components/util/CheckModal'
-import { MainContext } from '../../components/context/mainContext'
+import CheckModal from '../../components/util/CheckModal';
+import { MainContext } from '../../components/context/mainContext';
+import moment from 'moment';
 
-function CreateBoard() {
+function CreateBoard(props) {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const { onModal } = useContext(MainContext);
@@ -22,16 +23,18 @@ function CreateBoard() {
   const reset = () => {
     setTitle('')
     setDescription('')
+    props.setOpen(false)
   }
   const jwtToken = localStorage.getItem('jwt-token')
   const onSubmit = () => {
-
+      const dateNow = moment().format('YY-MM-DD HH:mm:ss');
      fetch('http://localhost:3030/boards/',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwtToken },
                 body: JSON.stringify({
-                  title: {title},
-                  description: {description},
+                  title: title,
+                  description: description,
+                  editDate: dateNow,
                 })
         }).then(res => res.json()).then(res => {
           if(res.id) {
@@ -39,7 +42,7 @@ function CreateBoard() {
           }
         })
   }
-  return (
+  return props.open ? (
     <Box>
       <FloatingLabel
         controlId="floatingTextarea"
@@ -69,7 +72,7 @@ function CreateBoard() {
     </Stack>
     <CheckModal title={'게시물을 등록하였습니다.'} description={`제목: ${title}`} url={'/board'} />
     </Box>
-  );
+  ) : null;
 }
 
 export default CreateBoard;
