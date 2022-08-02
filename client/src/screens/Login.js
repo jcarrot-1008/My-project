@@ -35,6 +35,7 @@ const Login = () => {
             password: password
         })
     }).then(res => res.json()).then(res => {
+        console.log(res)
         if(!!res.accessToken) {
             localStorage.setItem('jwt-token', res.accessToken);
             onModal()
