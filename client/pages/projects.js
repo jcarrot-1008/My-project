@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Layout from "../components/layout";
 import Head from "next/head";
 import { TOKEN, DATABASE_ID } from "../config";
@@ -45,7 +45,7 @@ export default function Projects({projects}) {
 
 // 각 요청 때마다 호출
 // export async function getServerSideProps() {
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const options = {
         method: 'POST',
