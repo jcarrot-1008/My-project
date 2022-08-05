@@ -4,8 +4,12 @@ import Head from "next/head";
 import { TOKEN, DATABASE_ID } from "../config";
 import ProjectItem from "../components/projects/project-item";
 import DetailItem from "../components/projects/detailItem";
-export default function Projects({projects}) {
+import { inject, observer } from 'mobx-react';
 
+function Projects(props) {
+
+    const { projects, store } = props
+    const {loginModel} = store
     const [detailPageId, setDetailPageId] = useState("list")
 
     return (
@@ -16,11 +20,13 @@ export default function Projects({projects}) {
                     <meta name="description" content="만들자" />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
-                <h1 className="text-2xl font-bold sm:text-4xl mt-10">
+                <h1 className="text-2xl font-bold sm:text-4xl mt-10" >
                     총 프로젝트 :
                     <span className="pl-4 text-blue-500">{projects.results.length}</span>
                 </h1>
-
+        <button onClick={loginModel.setInputField("email",'aa')}>
+            test
+        </button>
                 
                     {
                     detailPageId !== "list" ?
@@ -81,3 +87,7 @@ export async function getServerSideProps() {
       // revalidate: 1 // 데이터 변경이 있으면 갱신 1초 마다
     }
 }
+
+export default inject(({ store }) => ({
+  store: store.mainModel,
+}))(observer(Projects));
