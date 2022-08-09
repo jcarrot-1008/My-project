@@ -5,9 +5,9 @@ import dbConnect from '/src/lib/dbConnect';
 import User from '/src/models/User';
 
  const Home = ({ users }) => {
-console.log(window.innerHeight)
+
   return (
-    <Layout style={{height: window.innerHeight}}>
+    <Layout>
         <Head>
             <title>ONEJUNE</title>
             <meta name="description" content="만들자" />
