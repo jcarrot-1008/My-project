@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import Layout from "../components/layout";
+import Layout from "/src/components/layout";
 import Head from "next/head";
-import { TOKEN, DATABASE_ID } from "../config";
-import ProjectItem from "../components/projects/project-item";
-import DetailItem from "../components/projects/detailItem";
+import ProjectItem from "/src/components/projects/project-item";
+import DetailItem from "/src/components/projects/detailItem";
 import { inject, observer } from 'mobx-react';
 
 function Projects(props) {
@@ -40,48 +39,6 @@ function Projects(props) {
             </div>
         </Layout>
     );
-}
-
-// 빌드 타임에 호출
-// export async function getStaticProps() {
-
-// 각 요청 때마다 호출
-// export async function getServerSideProps() {
-export async function getServerSideProps() {
-
-    const options = {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Notion-Version': '2022-02-22',
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${TOKEN}`
-        },
-        body: JSON.stringify({
-            sorts: [
-                {
-                    "property": "Name",
-                    "direction": "ascending"
-                }
-            ],
-            page_size: 100
-        })
-      };
-
-    const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
-
-    const projects = await res.json()
-
-
-    const projectNames = projects.results.map((aProject) =>(
-        aProject.properties.Name.title[0].plain_text
-    ))
-
-    return {
-      props: {projects}, // will be passed to the page component as props
-      // getStaticProps() 메소드를 사용한다면 revalidate 로 데이터 변경시 갱신가능!
-      // revalidate: 1 // 데이터 변경이 있으면 갱신 1초 마다
-    }
 }
 
 export default inject(({ store }) => ({

@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import { ThemeProvider } from 'next-themes'
 import { SessionProvider } from "next-auth/react"
 import { Provider } from 'mobx-react'
-import { useStore } from '../components/store/rootStore'
+import { useStore } from '/src/components/store/rootStore'
 
 function MyApp({ 
   Component,
