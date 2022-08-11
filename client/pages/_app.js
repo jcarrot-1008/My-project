@@ -11,13 +11,13 @@ function MyApp({
     const store = useStore(pageProps.initialState)
     return(
 
-        <SessionProvider session={pageProps.session}>
+        // <SessionProvider session={pageProps.session}>
             <Provider store={store}>
                 <ThemeProvider attribute="class">
                     <Component {...pageProps} />
                 </ThemeProvider>
             </Provider>
-        </SessionProvider>
+        // </SessionProvider>
 
     );
 }
