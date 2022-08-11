@@ -1,14 +1,14 @@
 {
   "parser": "babel-parser",
   "plugins": [
-    "prettier"
+    "react", "react-hooks", "prettier"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
-    "ecmaVersion": 7,
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": false

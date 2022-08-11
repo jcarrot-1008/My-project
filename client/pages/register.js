@@ -31,7 +31,7 @@ const Register = (props) => {
 
     const createQuery = async() => {
       const {name, email, password} = loginModel
-      const res = await fetch('http://example.com/movies.json',{
+      const res = await fetch('http://localhost:3000/api/user',{
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -41,12 +41,12 @@ const Register = (props) => {
           "name": name,
           "email": email,
           "password": password,
-          "age": null,
+          "age": 0,
           "isAdmin": false
         }) 
       })
       console.log(res.json)
-      document.location.href = "/register"
+      // document.location.href = "/register"
       return res.json
     }
 
