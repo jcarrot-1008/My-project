@@ -6,6 +6,5 @@ env:
 extends:
   - airbnb
   - plugin:prettier/recommended
-  - prettier
 plugins: 
   - react
