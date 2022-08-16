@@ -2,6 +2,6 @@ env:
   browser: true
   es6: true
   node: true
-  ignoreNonDeclaration : true
+ignoreNonDeclaration : true
 extends:
   - airbnb
