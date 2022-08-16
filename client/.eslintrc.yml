@@ -1,7 +1,10 @@
+root: true
 env:
   browser: true
   es6: true
   node: true
 extends:
   - airbnb
-plugins: - react
+  - plugin:prettier/recommended
+plugins: 
+  - react
