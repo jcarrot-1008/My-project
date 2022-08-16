@@ -25,11 +25,11 @@ const Register = (props) => {
         throw alert("이메일형식이 다릅니다.")
       }
       console.log('성공')
-      loginModel.setInit()
       createQuery()
     }
 
     const createQuery = async() => {
+      console.log(loginModel)
       const {name, email, password} = loginModel
       const res = await fetch('http://localhost:3000/api/user',{
         method: 'POST',

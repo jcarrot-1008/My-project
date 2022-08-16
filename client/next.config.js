@@ -9,6 +9,7 @@ const nextConfig = {
     ],
     format: ['image/png', 'image/webp', 'image/jpeg'],
   },
+  swcMinify: false
 };
 
 module.exports = nextConfig;

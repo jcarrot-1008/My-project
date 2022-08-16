@@ -1,11 +1,12 @@
 {
-  "parser": "babel-parser",
+  "parser": "babel-eslint",
   "plugins": [
     "react", "react-hooks", "prettier"
   ],
   "extends": [
-    "eslint:recommended",
-    "plugin:prettier/recommended"
+    // "eslint:recommended",
+    // "plugin:prettier/recommended",
+    "airbnb"
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
