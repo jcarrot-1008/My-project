@@ -10,7 +10,7 @@ const model = types
     /** 검색 모델 */
     loginModel: types.optional(loginStore.model, loginStore.defaultValue),
   })
-  .actions((self) => ({
+  .actions(self => ({
     /** 상태값 초기화 */
     setInit() {
       applySnapshot(self, defaultValue);

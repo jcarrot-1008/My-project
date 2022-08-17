@@ -33,7 +33,7 @@ export async function getServerSideProps() {
   await dbConnect();
 
   const result = await User.find({});
-  const users = result.map((item) => {
+  const users = result.map(item => {
     const user = item.toObject();
     user._id = user._id.toString();
     return user;

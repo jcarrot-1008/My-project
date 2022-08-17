@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { applySnapshot, Instance, types } from 'mobx-state-tree';
 import mainStore from './main/mainStore';
-let store
+let store;
 const Store = types.model('store', {
   /** 스토어 아이덴티티 */
   identifier: types.optional(types.identifier, 'store'),
@@ -19,9 +19,9 @@ const initializeStore = (snapshot = null) => {
   if (snapshot) {
     applySnapshot(initStore, snapshot);
   }
-if (typeof window === 'undefined') return initStore;
+  if (typeof window === 'undefined') return initStore;
 
-if (!store) store = initStore;
+  if (!store) store = initStore;
   return store;
 };
 

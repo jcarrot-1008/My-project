@@ -5,7 +5,7 @@ function InputLayer(props) {
   const { type, text, saveType, store } = props;
   const { loginModel } = store;
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     loginModel.setInputField(saveType, event.target.value);
   };
   return (
