@@ -22,25 +22,6 @@ function Projects(props) {
           총 프로젝트 :
           <span className="pl-4 text-blue-500" />
         </h1>
-        {/* {detailPageId !== 'list' ? (
-          <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-1">
-            <DetailItem
-              data={projects.results}
-              detailPageId={detailPageId}
-              setDetailPageId={setDetailPageId}
-            />
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 gap-8 p-12 m-4 md:grid-cols-2">
-            {projects.results.map((aProject) => (
-              <ProjectItem
-                key={aProject.id}
-                data={aProject}
-                setDetailPageId={setDetailPageId}
-              />
-            ))}
-          </div>
-        )} */}
       </div>
     </Layout>
   );
