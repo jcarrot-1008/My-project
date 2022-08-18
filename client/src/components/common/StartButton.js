@@ -1,3 +1,4 @@
+import React from 'react';
 import { SparklesIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 

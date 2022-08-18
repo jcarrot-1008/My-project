@@ -1,3 +1,4 @@
+import React from 'react';
 import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({

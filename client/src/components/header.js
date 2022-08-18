@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import DarkModeToggleButton from './dark-mode-toggle-button';
 import { LightningBoltIcon } from '@heroicons/react/solid';
