@@ -5,6 +5,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

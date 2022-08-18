@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTheme } from 'next-themes';
+import React from "react";
+import { useTheme } from "next-themes";
 
 export default function DarkModeToggleButton() {
   // theme : 현재 값 가져오기 getter
@@ -22,7 +22,7 @@ export default function DarkModeToggleButton() {
                 dark:hover:text-yellow-300
                 "
         type="button"
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
         {/* 라이트 모드 */}
         <svg
