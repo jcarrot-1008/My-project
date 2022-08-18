@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '/src/components/layout';
 import Head from 'next/head';
-import ProjectItem from '/src/components/projects/project-item';
-import DetailItem from '/src/components/projects/detailItem';
 import { inject, observer } from 'mobx-react';
 
 function Projects(props) {
