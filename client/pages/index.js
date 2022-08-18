@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Layout from '/src/components/layout';
-import Hero from '/src/components/home/hero';
-import dbConnect from '/src/lib/dbConnect';
-import User from '/src/models/User';
+import Head from "next/head";
+import Layout from "/src/components/layout";
+import Hero from "/src/components/home/hero";
+import dbConnect from "/src/lib/dbConnect";
+import User from "/src/models/User";
 
 function Home({ users }) {
   return (

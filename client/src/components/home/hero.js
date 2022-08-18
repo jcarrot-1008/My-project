@@ -1,6 +1,6 @@
-import React from 'react';
-import Animation from './animation';
-import Link from 'next/link';
+import React from "react";
+import Animation from "./animation";
+import Link from "next/link";
 
 export default function Hero() {
   return (

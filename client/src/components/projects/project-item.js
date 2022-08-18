@@ -1,39 +1,39 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react"
+import Image from "next/image"
 export default function ProjectItem({ data, setDetailPageId }) {
-  const title = data.properties.Name.title[0].plain_text;
+  const title = data.properties.Name.title[0].plain_text
   // const github = data.properties.Github.url
   // const youtube = data.properties.Youtube.url
-  const description = data.properties.Description.rich_text[0].plain_text;
-  const imgSrc = data.cover.file?.url || data.cover.external.url;
-  const tags = data.properties.Tag.multi_select;
-  const start = data.properties.WorkPeriod.date.start;
-  const end = data.properties.WorkPeriod.date.end;
+  const description = data.properties.Description.rich_text[0].plain_text
+  const imgSrc = data.cover.file?.url || data.cover.external.url
+  const tags = data.properties.Tag.multi_select
+  const start = data.properties.WorkPeriod.date.start
+  const end = data.properties.WorkPeriod.date.end
 
   const calculatedPeriod = (start, end) => {
-    const startDateStringArray = start.split('-');
-    const endDateStringArray = end.split('-');
+    const startDateStringArray = start.split("-")
+    const endDateStringArray = end.split("-")
 
     var startDate = new Date(
       startDateStringArray[0],
       startDateStringArray[1],
       startDateStringArray[2],
-    );
+    )
     var endDate = new Date(
       endDateStringArray[0],
       endDateStringArray[1],
       endDateStringArray[2],
-    );
+    )
 
-    const diffInMs = Math.abs(endDate - startDate);
-    const result = diffInMs / (1000 * 60 * 60 * 24);
+    const diffInMs = Math.abs(endDate - startDate)
+    const result = diffInMs / (1000 * 60 * 60 * 24)
 
-    return result;
-  };
+    return result
+  }
 
   const setNumber = () => {
-    setDetailPageId(data.id);
-  };
+    setDetailPageId(data.id)
+  }
 
   return (
     <div className="project-card">
@@ -69,5 +69,5 @@ export default function ProjectItem({ data, setDetailPageId }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

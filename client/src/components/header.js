@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import DarkModeToggleButton from './dark-mode-toggle-button';
-import { LightningBoltIcon } from '@heroicons/react/solid';
-import StartButton from './common/StartButton';
+import React from "react"
+import Link from "next/link"
+import DarkModeToggleButton from "./dark-mode-toggle-button"
+import { LightningBoltIcon } from "@heroicons/react/solid"
+import StartButton from "./common/StartButton"
 
 export default function Header() {
   return (
@@ -43,5 +43,5 @@ export default function Header() {
         </div>
       </header>
     </>
-  );
+  )
 }

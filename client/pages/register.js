@@ -1,8 +1,8 @@
-import React from 'react';
-import Layout from '/src/components/layout';
-import Head from 'next/head';
-import { inject, observer } from 'mobx-react';
-import InputLayer from '/src/components/common/inpuLayer';
+import React from "react";
+import Layout from "/src/components/layout";
+import Head from "next/head";
+import { inject, observer } from "mobx-react";
+import InputLayer from "/src/components/common/inpuLayer";
 
 const Register = props => {
   const { loginModel } = props.store;
@@ -13,34 +13,34 @@ const Register = props => {
     console.log(name, email, password, checkPassword);
     console.log(password === checkPassword);
     if (
-      name === '' ||
-      email === '' ||
-      password === '' ||
-      checkPassword === ''
+      name === "" ||
+      email === "" ||
+      password === "" ||
+      checkPassword === ""
     ) {
-      throw alert('아래항목 다 적어주세요');
+      throw alert("아래항목 다 적어주세요");
     }
     if (password !== checkPassword) {
-      throw alert('패스워드는 동일해야 합니다.');
+      throw alert("패스워드는 동일해야 합니다.");
     }
     if (password.lengh <= 3) {
-      throw alert('패스워드는 3글자이상 적어야 합니다.');
+      throw alert("패스워드는 3글자이상 적어야 합니다.");
     }
     if (email.match(regExp) == null) {
-      throw alert('이메일형식이 다릅니다.');
+      throw alert("이메일형식이 다릅니다.");
     }
-    console.log('성공');
+    console.log("성공");
     createQuery();
   };
 
   const createQuery = async () => {
     console.log(loginModel);
     const { name, email, password } = loginModel;
-    const res = await fetch('http://localhost:3000/api/user', {
-      method: 'POST',
-      mode: 'no-cors',
+    const res = await fetch("http://localhost:3000/api/user", {
+      method: "POST",
+      mode: "no-cors",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name: name,
@@ -75,20 +75,20 @@ const Register = props => {
               Sign Up
             </h2>
             <InputLayer
-              type={'full-name'}
-              text={'Full Name'}
-              saveType={'name'}
+              type={"full-name"}
+              text={"Full Name"}
+              saveType={"name"}
             />
-            <InputLayer type={'email'} text={'Email'} saveType={'email'} />
+            <InputLayer type={"email"} text={"Email"} saveType={"email"} />
             <InputLayer
-              type={'password'}
-              text={'Password'}
-              saveType={'password'}
+              type={"password"}
+              text={"Password"}
+              saveType={"password"}
             />
             <InputLayer
-              type={'password'}
-              text={'Type Your Password again'}
-              saveType={'checkPassword'}
+              type={"password"}
+              text={"Type Your Password again"}
+              saveType={"checkPassword"}
             />
             <button
               className="text-white bg-indigo-500 border-0 py-2 px-8 

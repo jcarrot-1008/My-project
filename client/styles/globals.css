@@ -3,42 +3,46 @@
 @tailwind utilities;
 
 .bg-primary {
-    @apply bg-white dark:bg-slate-800 h-screen flex flex-col justify-between
+  @apply bg-white dark:bg-slate-800 h-screen flex flex-col justify-between;
 }
 
 .btn-project {
-    @apply inline-flex text-white dark:text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg
+  @apply inline-flex text-white dark:text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg;
 }
 
 .project-card {
-    @apply flex flex-col m-3 rounded-xl w-full
+  @apply flex flex-col m-3 rounded-xl w-full
             transition duration-300 transform border border-gray-300
             hover:scale-105
             hover:shadow-lg
             dark:border-gray-200/50
             dark:hover:shadow-gray-400/40
 
-            hover:text-blue-600
+            hover:text-blue-600;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    @apply text-slate-900 dark:text-white
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-slate-900 dark:text-white;
 }
 
 footer {
-    @apply text-gray-600 dark:text-white
-    bg-gray-100 dark:bg-slate-600/20 
+  @apply text-gray-600 dark:text-white
+    bg-gray-100 dark:bg-slate-600/20;
 }
 
 a {
-    @apply text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-50
+  @apply text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-50;
 }
 
 p {
-    @apply text-slate-500 dark:text-slate-400
+  @apply text-slate-500 dark:text-slate-400;
 }
 
 .textarea {
-    @apply placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm
+  @apply placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm;
 }
-

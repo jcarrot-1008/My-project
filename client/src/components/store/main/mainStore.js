@@ -1,7 +1,7 @@
-import { applySnapshot, Instance, types } from 'mobx-state-tree';
-import loginStore from './loginStore';
+import { applySnapshot, Instance, types } from "mobx-state-tree"
+import loginStore from "./loginStore"
 
-const IDENTIFIER = 'mainModel';
+const IDENTIFIER = "mainModel"
 
 const model = types
   .model(IDENTIFIER, {
@@ -13,23 +13,23 @@ const model = types
   .actions(self => ({
     /** 상태값 초기화 */
     setInit() {
-      applySnapshot(self, defaultValue);
+      applySnapshot(self, defaultValue)
     },
-  }));
+  }))
 
 /** 초기화 값 */
 const defaultValue = {
   identifier: IDENTIFIER,
   loginModel: loginStore.defaultValue,
-};
+}
 
 /** create or initialize */
-const create = model.create(defaultValue);
+const create = model.create(defaultValue)
 
 const mainStore = {
   create,
   defaultValue,
   model,
-};
+}
 
-export default mainStore;
+export default mainStore

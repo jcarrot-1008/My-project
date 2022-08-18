@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Layout from '/src/components/layout';
-import Head from 'next/head';
-import { inject, observer } from 'mobx-react';
+import React, { useState } from "react";
+import Layout from "/src/components/layout";
+import Head from "next/head";
+import { inject, observer } from "mobx-react";
 
 function Projects(props) {
   const { store } = props;
   const { loginModel } = store;
-  const [detailPageId, setDetailPageId] = useState('list');
+  const [detailPageId, setDetailPageId] = useState("list");
   s;
   return (
     <Layout>

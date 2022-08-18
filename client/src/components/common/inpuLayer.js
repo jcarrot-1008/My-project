@@ -1,5 +1,5 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
+import React from "react";
+import { inject, observer } from "mobx-react";
 
 function InputLayer(props) {
   const { type, text, saveType, store } = props;

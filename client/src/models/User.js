@@ -1,10 +1,9 @@
-import React from 'react';
-import mongoose from 'mongoose';
+import mongoose from "mongoose"
 
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true, //필수값
+    required: true,
     maxlength: 60,
   },
   email: {
@@ -23,6 +22,6 @@ const UserSchema = new mongoose.Schema({
   isAdmin: {
     type: Boolean,
   },
-});
+})
 
-export default mongoose.models.User || mongoose.model('User', UserSchema);
+export default mongoose.models.User || mongoose.model("User", UserSchema)
