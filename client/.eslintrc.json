@@ -33,6 +33,5 @@
   },
   "globals": {
     "React": "writable"
-  },
-  "eslint.workingDirectories": [{ "mode": "auto" }]
+  }
 }
