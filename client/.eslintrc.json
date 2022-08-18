@@ -33,5 +33,6 @@
   },
   "globals": {
     "React": "writable"
-  }
+  },
+  "useTabs": true
 }
