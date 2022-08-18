@@ -34,5 +34,10 @@
   "globals": {
     "React": "writable"
   },
-  "useTabs": true
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
+  ]
 }
